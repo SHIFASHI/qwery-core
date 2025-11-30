@@ -3,7 +3,11 @@ import {
   type InitProgressCallback,
   type MLCEngineInterface,
 } from '@mlc-ai/web-llm';
-import { AiSdkModelProvider } from './ai-sdk-model.provider';
+import { LanguageModel } from 'ai';
+
+type ModelProvider = {
+  resolveModel: (modelName: string) => LanguageModel;
+};
 
 export type WebLLMModelProviderOptions = {
   defaultModel?: string;
@@ -104,13 +108,13 @@ function createWebLLMModel(
 
 export function createWebLLMModelProvider(
   options: WebLLMModelProviderOptions = {},
-): AiSdkModelProvider {
+): ModelProvider {
   const defaultModel =
     options.defaultModel || 'Llama-3.1-8B-Instruct-q4f32_1-MLC';
   const defaultTemperature = options.defaultTemperature ?? 0.7;
   const initProgressCallback = options.initProgressCallback;
 
-  return new AiSdkModelProvider({
+  return {
     resolveModel: (modelName) => {
       const finalModel = modelName || defaultModel;
       if (!finalModel) {
@@ -124,8 +128,5 @@ export function createWebLLMModelProvider(
         initProgressCallback,
       );
     },
-    defaultCallSettings: {
-      temperature: defaultTemperature,
-    },
-  });
+  };
 }

@@ -2,18 +2,22 @@ import { TelemetryService } from './types';
 
 const isOnServer = typeof document === 'undefined';
 
+export const DEFAULT_POSTHOG_KEY =
+  'phc_1wb3ErK7DJgNWrGiZmH8mMUaPfEwSCuYJwOOT8JogJF';
+export const DEFAULT_POSTHOG_HOST = 'https://us.i.posthog.com';
+
 export class ClientTelemetryService implements TelemetryService {
   async initialize(): Promise<void> {
     if (isOnServer) {
       return Promise.resolve();
     }
     const { posthog } = await import('posthog-js');
-    posthog.init(import.meta.env.VITE_POSTHOG_KEY, {
+    posthog.init(import.meta.env.VITE_POSTHOG_KEY || DEFAULT_POSTHOG_KEY, {
       api_host: import.meta.env.VITE_POSTHOG_INGESTION_URL || '/qwery',
       ui_host:
         import.meta.env.VITE_POSTHOG_HOST ||
         import.meta.env.VITE_POSTHOG_URL ||
-        'https://us.i.posthog.com',
+        DEFAULT_POSTHOG_HOST,
       persistence: 'localStorage+cookie',
       person_profiles: 'always',
       capture_pageview: true,

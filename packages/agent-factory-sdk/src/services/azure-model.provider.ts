@@ -4,30 +4,29 @@ import {
   type AzureOpenAIProvider,
   type AzureOpenAIProviderSettings,
 } from '@ai-sdk/azure';
-import {
-  AiSdkModelProvider,
-  type AiSdkModelProviderOptions,
-} from './ai-sdk-model.provider';
+import { LanguageModel } from 'ai';
+
+type ModelProvider = {
+  resolveModel: (modelName: string) => LanguageModel;
+};
 
 export type AzureModelProviderOptions = AzureOpenAIProviderSettings & {
   deployment?: string;
   provider?: AzureOpenAIProvider;
-  defaultCallSettings?: AiSdkModelProviderOptions['defaultCallSettings'];
 };
 
 export function createAzureModelProvider({
   deployment,
   provider,
-  defaultCallSettings,
   ...azureOptions
-}: AzureModelProviderOptions): AiSdkModelProvider {
+}: AzureModelProviderOptions): ModelProvider {
   const resolvedProvider: AzureOpenAIProvider =
     provider ??
     (Object.keys(azureOptions).length > 0
       ? createAzure(azureOptions)
       : defaultAzureProvider);
 
-  return new AiSdkModelProvider({
+  return {
     resolveModel: (modelName) => {
       const finalDeployment = modelName || deployment;
       if (!finalDeployment) {
@@ -38,6 +37,5 @@ export function createAzureModelProvider({
 
       return resolvedProvider(finalDeployment);
     },
-    defaultCallSettings,
-  });
+  };
 }

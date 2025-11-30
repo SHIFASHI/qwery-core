@@ -1,5 +1,9 @@
 import { createOllama } from 'ollama-ai-provider-v2';
-import { AiSdkModelProvider } from './ai-sdk-model.provider';
+import { LanguageModel } from 'ai';
+
+type ModelProvider = {
+  resolveModel: (modelName: string) => LanguageModel;
+};
 
 export type OllamaModelProviderOptions = {
   baseUrl?: string;
@@ -9,12 +13,12 @@ export type OllamaModelProviderOptions = {
 export function createOllamaModelProvider({
   baseUrl,
   defaultModel,
-}: OllamaModelProviderOptions = {}): AiSdkModelProvider {
+}: OllamaModelProviderOptions = {}): ModelProvider {
   const ollama = createOllama({
     baseURL: baseUrl,
   });
 
-  return new AiSdkModelProvider({
+  return {
     resolveModel: (modelName) => {
       const finalModel = modelName || defaultModel;
       if (!finalModel) {
@@ -24,5 +28,5 @@ export function createOllamaModelProvider({
       }
       return ollama(finalModel);
     },
-  });
+  };
 }

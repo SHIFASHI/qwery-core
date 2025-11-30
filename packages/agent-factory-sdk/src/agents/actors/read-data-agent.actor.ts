@@ -1,6 +1,5 @@
 'use server';
 
-import { AgentFactory } from '../..';
 import { Experimental_Agent, stepCountIs, tool } from 'ai';
 import type { LanguageModel, UIMessage } from 'ai';
 import { z } from 'zod';
@@ -10,6 +9,7 @@ import { runQuery } from '../../tools/run-query';
 import { testConnection } from '../../tools/test-connection';
 import { fromPromise } from 'xstate/actors';
 import { READ_DATA_AGENT_PROMPT } from '../prompts/read-data-agent.prompt';
+import { resolveModel } from '../../services';
 
 export const readDataAgentActor = fromPromise(
   async ({
@@ -24,7 +24,8 @@ export const readDataAgentActor = fromPromise(
     const agent = new ReadDataAgent({
       conversationId: input.conversationId,
     });
-    const result = agent.getAgent().stream({
+    const agentInstance = await agent.getAgent();
+    const result = agentInstance.stream({
       prompt: input.inputMessage,
     });
     return result;
@@ -60,28 +61,32 @@ export interface ReadDataAgentOptions {
 }
 
 export class ReadDataAgent {
-  private readonly factory = new AgentFactory();
-  private readonly agent: ReturnType<ReadDataAgent['createAgent']>;
+  private agentPromise: Promise<
+    ReturnType<ReadDataAgent['createAgent']>
+  > | null = null;
   private readonly conversationId: string;
 
   constructor(opts: ReadDataAgentOptions) {
     this.conversationId = opts.conversationId;
+  }
 
-    const model = this.factory.resolveModel({
-      name: 'azure/gpt-5-mini',
-    });
+  async getAgent(): Promise<ReturnType<ReadDataAgent['createAgent']>> {
+    if (!this.agentPromise) {
+      this.agentPromise = this.initializeAgent();
+    }
+    return this.agentPromise;
+  }
+
+  private async initializeAgent(): Promise<
+    ReturnType<ReadDataAgent['createAgent']>
+  > {
+    const model = await resolveModel('azure/gpt-5-mini');
 
     if (!isLanguageModel(model)) {
       throw new Error('AgentFactory resolved model is not a LanguageModel');
     }
 
-    this.agent = this.createAgent(model);
-
-    // ReadDataAgent created silently
-  }
-
-  getAgent(): ReturnType<ReadDataAgent['createAgent']> {
-    return this.agent;
+    return this.createAgent(model);
   }
 
   private createAgent(model: LanguageModel) {
